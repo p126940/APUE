@@ -9,7 +9,7 @@ pthread_mutex_t mutex;
 
 void handler()
 {
-	printf("in handler, pid:%d  tid:0x%x\n",getpid(),pthread_self());
+	printf("in handler  , pid:%d  tid:0x%x\n",getpid(),pthread_self());
 	pthread_mutex_lock(&mutex);
 	printf("signal handler get lock\n");
 }
@@ -27,6 +27,7 @@ void thread()
 	printf("in thread, pid:%d  tid:0x%x\n",getpid(),pthread_self());
 	pthread_mutex_lock(&mutex);
 	printf("thread get lock\n");
+	while(1);
 }
 
 void main()
