@@ -1,0 +1,12 @@
+test line and full buffering of standard I/O library 
+
+test line buffering
+command:
+	strace -e trace=write ./main
+to see when system call write will be execute.
+
+
+test full buffering
+command:
+	strace -e trace=write ./main f
+to see when system call write will be execute.
